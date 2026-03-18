@@ -1,0 +1,27 @@
+{
+  "name": "my-best-component-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.15.1",
+  "dependencies": {
+    "@floating-ui/vue": "^1.1.11",
+    "@material/web": "^2.4.1",
+    "@vueuse/core": "^14.2.1"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@vitejs/plugin-vue": "^6.0.5",
+    "vite": "^8.0.0",
+    "vue": "^3.4.0"
+  }
+}

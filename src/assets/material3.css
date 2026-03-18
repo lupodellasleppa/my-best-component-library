@@ -1,0 +1,108 @@
+:root {
+  --catalog-display-xl-font-size: 88px;
+  --catalog-display-m-font-size: 45px;
+  --catalog-title-l-font-size: 22px;
+  --catalog-title-m-font-size: 16px;
+  --catalog-title-s-font-size: 14px;
+  --catalog-body-l-font-size: 16px;
+  --catalog-body-m-font-size: 14px;
+  --catalog-headline-s-font-size: 24px;
+  --catalog-label-s-font-size: 11px;
+  --catalog-shape-xl: 28px;
+  --catalog-shape-l: 16px;
+  --catalog-shape-m: 12px;
+  --catalog-shape-s: 8px;
+  --catalog-shape-xs: 4px;
+  --catalog-spacing-xl: 28px;
+  --catalog-spacing-l: 16px;
+  --catalog-spacing-m: 12px;
+  --catalog-spacing-s: 8px;
+
+  --mbc-top-app-bar-height: calc(48px + 2 * var(--md-sys-shape-small));
+
+  --md-navigation-drawer-container-color: var(
+    --md-sys-color-surface-container
+  );
+  --md-navigation-drawer-container-width--opened: 256px;
+  --md-navigation-drawer-container-width--closed: 0px;
+  --md-navigation-drawer-container-width: 256px;
+  --navbar-transition-old: 0.25s cubic-bezier(0.3, 0, 0, 1);
+  --md-navigation-drawer-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --_pane-margin-inline-start: 0px;
+  --_pane-margin-inline-end: var(--catalog-spacing-l);
+  --_pane-margin-block-end: var(--catalog-spacing-l);
+  --_toc-pane-width: 250px;
+
+  --md-sys-shape-extra-small: 4px;
+  --md-sys-shape-small: 8px;
+  --md-sys-shape-medium: 12px;
+  --md-sys-shape-large: 16px;
+  --md-sys-shape-large-increased: 20px;
+  --md-sys-shape-extra-large: 28px;
+  --md-sys-shape-extra-large-increased: 32px;
+  --md-sys-shape-extra-extra-large: 48px;
+
+  --md-sys-shape-corner-extra-small: var(--md-sys-shape-extra-small);
+  --md-sys-shape-corner-small: var(--md-sys-shape-small);
+  --md-sys-shape-corner-medium: var(--md-sys-shape-medium);
+  --md-sys-shape-corner-large: var(--md-sys-shape-large);
+  --md-sys-shape-corner-large-increased: var(--md-sys-shape-large-increased);
+  --md-sys-shape-corner-extra-large: var(--md-sys-shape-extra-large);
+  --md-sys-shape-corner-extra-large-increased: var(
+    --md-sys-shape-extra-large-increased
+  );
+  --md-sys-shape-corner-extra-extra-large: var(
+    --md-sys-shape-extra-extra-large
+  );
+
+  /* side border radius start */
+  /* bottom */
+  --md-sys-shape-corner-extra-small-bottom: 0 0 var(--md-sys-shape-extra-small)
+    var(--md-sys-shape-extra-small);
+  --md-sys-shape-corner-small-bottom: 0 0 var(--md-sys-shape-small)
+    var(--md-sys-shape-small);
+  --md-sys-shape-corner-medium-bottom: 0 0 var(--md-sys-shape-medium)
+    var(--md-sys-shape-medium);
+  --md-sys-shape-corner-large-bottom: 0 0 var(--md-sys-shape-large)
+    var(--md-sys-shape-large);
+  --md-sys-shape-corner-large-increased-bottom: 0 0
+    var(--md-sys-shape-large-increased) var(--md-sys-shape-large-increased);
+  --md-sys-shape-corner-extra-large-bottom: 0 0 var(--md-sys-shape-extra-large)
+    var(--md-sys-shape-extra-large);
+  --md-sys-shape-corner-extra-large-increased-bottom: 0 0
+    var(--md-sys-shape-extra-large-increased)
+    var(--md-sys-shape-extra-large-increased);
+  /* right */
+  --md-sys-shape-corner-extra-small-right: 0 var(--md-sys-shape-extra-small)
+    var(--md-sys-shape-extra-small) 0;
+  --md-sys-shape-corner-small-right: 0 var(--md-sys-shape-small)
+    var(--md-sys-shape-small) 0;
+  --md-sys-shape-corner-medium-right: 0 var(--md-sys-shape-medium)
+    var(--md-sys-shape-medium) 0;
+  --md-sys-shape-corner-large-right: 0 var(--md-sys-shape-large)
+    var(--md-sys-shape-large) 0;
+  --md-sys-shape-corner-large-increased-right: 0
+    var(--md-sys-shape-large-increased) var(--md-sys-shape-large-increased) 0;
+  --md-sys-shape-corner-extra-large-right: 0 var(--md-sys-shape-extra-large)
+    var(--md-sys-shape-extra-large) 0;
+  --md-sys-shape-corner-extra-large-increased-right: 0
+    var(--md-sys-shape-extra-large-increased)
+    var(--md-sys-shape-extra-large-increased) 0;
+  /* side border radius end */
+
+  --md-sys-padding-extra-small: var(--md-sys-shape-extra-small);
+  --md-sys-padding-small: var(--md-sys-shape-small);
+  --md-sys-padding-medium: var(--md-sys-shape-medium);
+  --md-sys-padding-large: var(--md-sys-shape-large);
+  --md-sys-padding-large-increased: var(--md-sys-shape-large-increased);
+  --md-sys-padding-extra-large: var(--md-sys-shape-extra-large);
+  --md-sys-padding-extra-large-increased: var(
+    --md-sys-shape-extra-large-increased
+  );
+  --md-sys-padding-extra-extra-large: var(--md-sys-shape-extra-extra-large);
+
+  --md-icon-default-variation-fill: 0;
+  --md-icon-default-variation-wght: 300;
+  --md-icon-default-variation-grad: -25;
+  --md-icon-default-variation-opsz: 48;
+}
