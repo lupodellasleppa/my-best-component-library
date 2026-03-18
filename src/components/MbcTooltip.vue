@@ -6,16 +6,29 @@ import { useFloating, autoUpdate, offset, flip, shift } from '@floating-ui/vue'
 export interface Props {
   text?: string
   desktopOnly?: boolean
+  delay?: number // Added delay configuration
 }
 
-const props = defineProps<Props>()
+// Set a default delay of 400ms (industry standard)
+const props = withDefaults(defineProps<Props>(), {
+  delay: 400,
+})
 
 const parent = useParentElement()
 const tooltip = useTemplateRef<HTMLElement | null>('tooltip')
 
 const isDesktop = useMediaQuery('(min-width: 1024px)')
-const isParentHovered = useElementHover(parent)
-const isTooltipHovered = useElementHover(tooltip)
+
+// 1. Add delayEnter for the initial hover, and a tiny delayLeave to bridge the gap
+const isParentHovered = useElementHover(parent, {
+  delayEnter: props.delay,
+  delayLeave: 100,
+})
+
+// 2. Add delayLeave here so the tooltip doesn't vanish instantly when moving off it
+const isTooltipHovered = useElementHover(tooltip, {
+  delayLeave: 100,
+})
 
 const showOnDesktop = computed(() => {
   if (props.desktopOnly !== true) return true
@@ -26,6 +39,7 @@ const show = computed(
   () =>
     showOnDesktop.value && (isParentHovered.value || isTooltipHovered.value),
 )
+
 const { floatingStyles } = useFloating(parent, tooltip, {
   placement: 'bottom',
   strategy: 'absolute',
