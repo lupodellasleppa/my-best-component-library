@@ -4,12 +4,13 @@ import { useCSS } from '@/composables/useCSS'
 const { getCSSPropertyValue } = useCSS()
 const topAppBarHeight = getCSSPropertyValue('--mbc-top-app-bar-height')
 
+defineEmits(['stuck'])
+
 const vStickyStuck = {
   mounted(el: HTMLElement) {
     // We observe the element. When it gets within 1px of the top of the viewport,
     // it triggers the observer.
     const rootMargin = `-${parseFloat(topAppBarHeight) + 1 + 43}px 0px 0px 0px`
-    console.log(rootMargin)
     const observer = new IntersectionObserver(
       ([entry]) => {
         // 1. Is it partially off-screen?
@@ -57,13 +58,6 @@ defineProps<{
   top: 0;
   z-index: 9;
   // transition: all 0.2s ease;
-}
-.is-stuck {
-  margin-inline: calc(var(--md-sys-padding-large) * -1);
-  padding-inline: calc(
-    var(--md-sys-padding-large) + var(--md-sys-shape-small)
-  );
-  --md-filled-card-container-shape: 0px;
 }
 .is-first-element.is-stuck {
   margin-block-start: calc(var(--md-sys-padding-large) * -1);
