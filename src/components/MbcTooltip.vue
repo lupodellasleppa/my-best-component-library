@@ -7,6 +7,7 @@ export interface Props {
   text?: string
   desktopOnly?: boolean
   delay?: number // Added delay configuration
+  placement?: 'top' | 'bottom' | 'left' | 'right'
 }
 
 // Set a default delay of 400ms (industry standard)
@@ -40,8 +41,12 @@ const show = computed(
     showOnDesktop.value && (isParentHovered.value || isTooltipHovered.value),
 )
 
+const placement = computed(() => {
+  return props.placement || 'bottom'
+})
+
 const { floatingStyles } = useFloating(parent, tooltip, {
-  placement: 'bottom',
+  placement,
   strategy: 'absolute',
   whileElementsMounted: autoUpdate,
   middleware: [offset(8), flip(), shift({ padding: 8 })],
