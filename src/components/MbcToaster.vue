@@ -9,14 +9,14 @@ const { toasts, currentPosition, remove } = useToast()
   <Teleport to="body">
     <div class="toaster-viewport" :data-position="currentPosition">
       <TransitionGroup name="toast-list" tag="div" class="toast-container">
-        <md-filled-card
+        <div
           v-for="toast in toasts"
           :key="toast.id"
           class="toast-card"
           @click="remove(toast.id)"
         >
           {{ toast.message }}
-        </md-filled-card>
+        </div>
       </TransitionGroup>
     </div>
   </Teleport>
@@ -27,9 +27,6 @@ const { toasts, currentPosition, remove } = useToast()
 .toaster-viewport {
   --space: var(--md-sys-shape-small);
   position: fixed;
-  // bottom: var(--space);
-  // left: var(--space);
-  // transform: translateX(-50%);
   z-index: 9999;
 
   /* Critical: allows clicks to pass through the invisible container
@@ -76,13 +73,10 @@ const { toasts, currentPosition, remove } = useToast()
   pointer-events: auto; /* Re-enable clicks specifically for the toast */
   cursor: pointer;
   padding: 12px 24px;
-  --md-filled-card-container-color: var(
-    --md-sys-color-inverse-surface,
-    #313033
-  );
+  background-color: var(--md-sys-color-inverse-surface, #313033);
   color: var(--md-sys-color-inverse-on-surface, #f4eff4);
   font-size: 0.875rem;
-  border-radius: 8px;
+  border-radius: var(--md-sys-shape-small);
   box-shadow:
     0 4px 6px -1px rgb(0 0 0 / 0.1),
     0 2px 4px -2px rgb(0 0 0 / 0.1);

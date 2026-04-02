@@ -39,18 +39,19 @@ defineProps<{
 </script>
 
 <template>
-  <md-filled-card
+  <div
     class="sticky-header"
     v-sticky-stuck
     :class="{ 'is-first-element': isFirstElement }"
   >
     <slot> {{ label }} </slot>
-  </md-filled-card>
+  </div>
 </template>
 
 <style scoped lang="scss">
 .sticky-header {
-  --md-filled-card-container-color: var(--mbc-sticky-header-container-color);
+  background-color: var(--mbc-sticky-header-container-color);
+  border-radius: var(--md-sys-shape-medium);
   padding: var(--md-sys-shape-small);
   font-size: 1.2em;
   font-weight: 500;
