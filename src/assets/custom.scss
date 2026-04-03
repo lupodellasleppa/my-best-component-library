@@ -1,4 +1,5 @@
 :root {
+  // BADGE OUTLINED
   --mbc-badge-outlined-background: var(--md-sys-color-on-tertiary);
   --mbc-badge-outlined-color: var(--md-sys-color-tertiary);
   --mbc-badge-outlined-font-size: 0.8rem;
@@ -6,6 +7,7 @@
   --mbc-badge-outlined-padding: var(--md-sys-padding-extra-small)
     var(--md-sys-padding-medium);
 
+  // BADGE FILLED
   --mbc-badge-filled-background: var(--md-sys-color-primary);
   --mbc-badge-filled-color: var(--md-sys-color-on-primary);
   --mbc-badge-filled-font-size: 0.8rem;
@@ -13,16 +15,26 @@
   --mbc-badge-filled-padding: var(--md-sys-padding-extra-small)
     var(--md-sys-padding-medium);
 
+  // TOOLTIP
   --mbc-tooltip-text-color: var(--md-sys-color-on-inverted-surface);
   --mbc-tooltip-background-color: var(--md-sys-color-inverted-surface);
   --mbc-tooltip-shape: var(--md-sys-shape-corner-extra-small);
   --mbc-tooltip-padding: var(--md-sys-padding-small)
     var(--md-sys-padding-medium);
 
+  // STICKY HEADER
   --mbc-sticky-header-container-color: var(--md-sys-color-surface);
   --mbc-sticky-header-color: var(--md-sys-color-on-surface);
   --mbc-sticky-header-font-size: 0.8rem;
   --mbc-sticky-header-shape: var(--md-sys-shape-corner-small);
   --mbc-sticky-header-padding: var(--md-sys-padding-extra-small)
     var(--md-sys-padding-small);
+
+  // DROPDOWN
+  --mbc-button-dropdown-menu-container-color: var(
+    --md-sys-color-surface-container-highest
+  );
+  --mbc-button-dropdown-menu-text-color: var(
+    --md-sys-color-on-surface-container
+  );
 }
