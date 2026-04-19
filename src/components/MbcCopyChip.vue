@@ -36,11 +36,7 @@ watch(copied, () => {
 </script>
 
 <template>
-  <md-assist-chip
-    class="copy-chip"
-    :disabled="!isSupported"
-    @click="copyBookingSerial"
-  >
+  <md-assist-chip class="copy-chip" :disabled="!isSupported" @click="copyBookingSerial">
     <md-icon slot="icon">{{ displayIcon }}</md-icon>
     {{ displayLabel }}
   </md-assist-chip>
@@ -49,9 +45,10 @@ watch(copied, () => {
 <style lang="scss" scoped>
 .copy-chip {
   --md-assist-chip-label-text-color: var(--md-sys-color-on-surface-variant);
-  --md-assist-chip-label-text-size: 0.68rem;
+  --md-assist-chip-label-text-size: 0.8rem;
   --md-assist-chip-label-text-font: "Geist Mono", monospace;
   --md-assist-chip-icon-size: 1rem;
   --md-assist-chip-container-height: 1.5rem;
+  --md-assist-chip-label-text-weight: 350
 }
 </style>
