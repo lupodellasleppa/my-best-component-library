@@ -16,11 +16,12 @@
     var(--md-sys-padding-medium);
 
   // TOOLTIP
-  --mbc-tooltip-text-color: var(--md-sys-color-on-inverted-surface);
-  --mbc-tooltip-background-color: var(--md-sys-color-inverted-surface);
+  --mbc-tooltip-text-color: var(--md-sys-color-inverse-on-surface);
+  --mbc-tooltip-background-color: var(--md-sys-color-inverse-surface);
   --mbc-tooltip-shape: var(--md-sys-shape-corner-extra-small);
   --mbc-tooltip-padding: var(--md-sys-padding-small)
     var(--md-sys-padding-medium);
+  --mbc-tooltip-outline: var(--md-sys-color-outline);
 
   // STICKY HEADER
   --mbc-sticky-header-container-color: var(--md-sys-color-surface);

@@ -13,6 +13,7 @@ export interface Props {
 // Set a default delay of 400ms (industry standard)
 const props = withDefaults(defineProps<Props>(), {
   delay: 400,
+  placement: 'bottom',
 })
 
 const parent = useParentElement()
@@ -55,14 +56,14 @@ const { floatingStyles } = useFloating(parent, tooltip, {
 
 <template>
   <Teleport to="body">
-    <md-outlined-card
+    <div
       v-if="show"
       ref="tooltip"
       class="tooltiptext"
       :style="[floatingStyles]"
     >
       <slot>{{ text }}</slot>
-    </md-outlined-card>
+    </div>
   </Teleport>
 </template>
 
@@ -75,6 +76,7 @@ const { floatingStyles } = useFloating(parent, tooltip, {
   color: var(--mbc-tooltip-text-color);
   background-color: var(--mbc-tooltip-background-color);
   border-radius: var(--mbc-tooltip-shape);
+  border: 1px solid var(--mbc-tooltip-outline);
   padding: var(--mbc-tooltip-padding);
   z-index: 1000;
   margin: 0;
