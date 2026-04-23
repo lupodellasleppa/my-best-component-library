@@ -1,57 +1,53 @@
 <script setup lang="ts">
-import { ref, computed, useTemplateRef } from "vue";
-import { onClickOutside } from "@vueuse/core";
-import { useFloating, autoUpdate, offset, flip, shift } from "@floating-ui/vue";
-
-// Material web imports for list components (likely used in the slot)
-import "@material/web/list/list.js";
-import "@material/web/list/list-item.js";
+import { ref, computed, useTemplateRef } from 'vue'
+import { onClickOutside } from '@vueuse/core'
+import { useFloating, autoUpdate, offset, flip, shift } from '@floating-ui/vue'
 
 export interface Props {
   placement?:
-    | "top"
-    | "bottom"
-    | "left"
-    | "right"
-    | "top-start"
-    | "top-end"
-    | "bottom-start"
-    | "bottom-end";
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  placement: "bottom-start",
-});
+  placement: 'bottom-start',
+})
 
-const isOpen = ref(false);
+const isOpen = ref(false)
 const toggleMenuOpen = (value?: boolean) => {
-  isOpen.value = value ?? !isOpen.value;
-};
+  isOpen.value = value ?? !isOpen.value
+}
 
-const anchor = useTemplateRef<HTMLElement | null>("anchor");
-const menu = useTemplateRef<HTMLElement | null>("menu");
+const anchor = useTemplateRef<HTMLElement | null>('anchor')
+const menu = useTemplateRef<HTMLElement | null>('menu')
 
 // Positioning logic mirroring MbcTooltip.vue
 const { floatingStyles } = useFloating(anchor, menu, {
   placement: computed(() => props.placement),
-  strategy: "fixed",
+  strategy: 'fixed',
   whileElementsMounted: autoUpdate,
   middleware: [offset(4), flip(), shift({ padding: 8 })],
-});
+})
 
 // Close the menu when clicking outside it, ignoring clicks on the trigger button
 onClickOutside(menu, (event) => {
   if (anchor.value && anchor.value.contains(event.target as Node)) {
-    return;
+    return
   }
-  isOpen.value = false;
-});
+  isOpen.value = false
+})
 
 // Expose open state and toggle method
 defineExpose({
   isOpen,
   toggleMenuOpen,
-});
+})
 </script>
 
 <template>
